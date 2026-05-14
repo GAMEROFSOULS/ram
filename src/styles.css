@@ -1,0 +1,148 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-oak-900: var(--oak-900);
+  --color-oak-700: var(--oak-700);
+  --color-oak-500: var(--oak-500);
+  --color-oak-300: var(--oak-300);
+  --color-oak-100: var(--oak-100);
+  --color-teak-900: var(--teak-900);
+  --color-teak-700: var(--teak-700);
+  --color-teak-500: var(--teak-500);
+  --color-teak-300: var(--teak-300);
+  --color-teak-100: var(--teak-100);
+  --color-amber: var(--accent-amber);
+  --color-herb: var(--accent-green);
+
+  --shadow-soft: var(--shadow-1);
+  --shadow-elevated: var(--shadow-2);
+  --shadow-deep: var(--shadow-3);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Indian oak & teak palette */
+  --oak-900: #4A2F1A;
+  --oak-700: #6B4B2A;
+  --oak-500: #8E6A44;
+  --oak-300: #B89A7A;
+  --oak-100: #EADFD3;
+  --teak-900: #53361E;
+  --teak-700: #7A5232;
+  --teak-500: #9D7250;
+  --teak-300: #CDA98B;
+  --teak-100: #F1E6DE;
+  --accent-green: #2E8B57;
+  --accent-amber: #D98812;
+
+  /* Semantic mapping */
+  --background: #FAF6F1;
+  --foreground: #1a1310;
+  --card: #FFFFFF;
+  --card-foreground: #1a1310;
+  --popover: #FFFFFF;
+  --popover-foreground: #1a1310;
+  --primary: #6B4B2A;
+  --primary-foreground: #FAF6F1;
+  --secondary: #F1E6DE;
+  --secondary-foreground: #53361E;
+  --muted: #EADFD3;
+  --muted-foreground: #6b5a4a;
+  --accent: #D98812;
+  --accent-foreground: #1a1310;
+  --destructive: #b3261e;
+  --destructive-foreground: #FAF6F1;
+  --border: #d9c8b6;
+  --input: #d9c8b6;
+  --ring: #8E6A44;
+
+  --shadow-1: 0 1px 4px rgba(74,47,26,0.08);
+  --shadow-2: 0 8px 24px rgba(74,47,26,0.14);
+  --shadow-3: 0 24px 56px rgba(74,47,26,0.20);
+
+  --gradient-warm: linear-gradient(135deg, var(--teak-100), var(--oak-100));
+  --gradient-wood: linear-gradient(160deg, var(--oak-700), var(--teak-900));
+}
+
+.dark {
+  --background: #1a1310;
+  --foreground: #F1E6DE;
+  --card: #261b15;
+  --card-foreground: #F1E6DE;
+  --popover: #261b15;
+  --popover-foreground: #F1E6DE;
+  --primary: #CDA98B;
+  --primary-foreground: #1a1310;
+  --secondary: #3a2a1f;
+  --secondary-foreground: #F1E6DE;
+  --muted: #3a2a1f;
+  --muted-foreground: #B89A7A;
+  --accent: #D98812;
+  --accent-foreground: #1a1310;
+  --border: #4a3527;
+  --input: #4a3527;
+  --ring: #CDA98B;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-wood { background: var(--gradient-wood); }
+  .text-balance { text-wrap: balance; }
+  .wood-grain {
+    background-image:
+      repeating-linear-gradient(90deg, transparent 0 6px, rgba(74,47,26,0.04) 6px 7px),
+      var(--gradient-warm);
+  }
+}
