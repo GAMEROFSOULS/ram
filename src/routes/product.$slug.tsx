@@ -39,18 +39,17 @@ function ProductPage() {
       <SiteNav />
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <Link to="/products" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition mb-8">
+        <Link
+          to="/products"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition mb-8"
+        >
           <ArrowLeft className="h-4 w-4" /> Back to Collection
         </Link>
-        
+
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12 xl:gap-x-16">
           {/* Image */}
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-muted shadow-soft">
-            <img 
-              src={product.image} 
-              alt={product.name} 
-              className="h-full w-full object-cover" 
-            />
+            <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
             {product.badge && (
               <span className="absolute left-4 top-4 rounded-full bg-amber px-3 py-1 text-xs font-medium text-accent-foreground">
                 {product.badge}
@@ -67,10 +66,8 @@ function ProductPage() {
             <div className="mt-4 flex items-center justify-between">
               <p className="text-2xl font-medium text-foreground">{inr(product.price)}</p>
             </div>
-            
-            <p className="mt-6 text-base text-muted-foreground leading-relaxed">
-              {product.blurb}
-            </p>
+
+            <p className="mt-6 text-base text-muted-foreground leading-relaxed">{product.blurb}</p>
 
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <button
@@ -94,19 +91,27 @@ function ProductPage() {
                 <dl className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
                   <div>
                     <dt className="text-sm font-medium text-foreground">Dimensions</dt>
-                    <dd className="mt-1 text-sm text-muted-foreground">{product.specifications.dimensions}</dd>
+                    <dd className="mt-1 text-sm text-muted-foreground">
+                      {product.specifications.dimensions}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-sm font-medium text-foreground">Material</dt>
-                    <dd className="mt-1 text-sm text-muted-foreground">{product.specifications.material}</dd>
+                    <dd className="mt-1 text-sm text-muted-foreground">
+                      {product.specifications.material}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-sm font-medium text-foreground">Weight</dt>
-                    <dd className="mt-1 text-sm text-muted-foreground">{product.specifications.weight}</dd>
+                    <dd className="mt-1 text-sm text-muted-foreground">
+                      {product.specifications.weight}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-sm font-medium text-foreground">Care</dt>
-                    <dd className="mt-1 text-sm text-muted-foreground">{product.specifications.care}</dd>
+                    <dd className="mt-1 text-sm text-muted-foreground">
+                      {product.specifications.care}
+                    </dd>
                   </div>
                 </dl>
               </div>

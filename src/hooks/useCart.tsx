@@ -46,9 +46,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existing = current.find((item) => item.id === product.id);
       if (existing) {
         return current.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
         );
       }
       return [...current, { ...product, quantity: 1 }];
@@ -64,9 +62,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       removeFromCart(id);
       return;
     }
-    setItems((current) =>
-      current.map((item) => (item.id === id ? { ...item, quantity } : item))
-    );
+    setItems((current) => current.map((item) => (item.id === id ? { ...item, quantity } : item)));
   };
 
   const clearCart = () => setItems([]);

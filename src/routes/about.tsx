@@ -8,7 +8,11 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "Craft & Sourcing — Adityahomefurniture" },
-      { name: "description", content: "How Adityahomefurniture sources Indian hardwood and hand-builds heirloom oak and teak furniture." },
+      {
+        name: "description",
+        content:
+          "How Adityahomefurniture sources Indian hardwood and hand-builds heirloom oak and teak furniture.",
+      },
       { property: "og:title", content: "Craft & Sourcing — Adityahomefurniture" },
       { property: "og:url", content: "/about" },
     ],
@@ -33,7 +37,9 @@ function AboutPage() {
         <div className="absolute inset-0 bg-oak-900/55" />
         <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-end px-4 pb-12 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.2em] text-amber">Our craft</p>
-          <h1 className="mt-2 max-w-3xl font-serif text-4xl text-primary-foreground sm:text-6xl">A workshop, not a warehouse.</h1>
+          <h1 className="mt-2 max-w-3xl font-serif text-4xl text-primary-foreground sm:text-6xl">
+            A workshop, not a warehouse.
+          </h1>
         </div>
       </section>
 
@@ -41,19 +47,22 @@ function AboutPage() {
         <div>
           <h2 className="font-serif text-3xl sm:text-4xl">From forest floor to your floor.</h2>
           <p className="mt-4 text-muted-foreground">
-            Adityahomefurniture began in 2008 with a single bench, hand-cut from a fallen Indian oak.
-            Two decades on, we still source the same way: directly from FSC-aligned mills across
-            Karnataka and Andhra Pradesh, with traceable provenance for every plank we plane.
+            Adityahomefurniture began in 2008 with a single bench, hand-cut from a fallen Indian
+            oak. Two decades on, we still source the same way: directly from FSC-aligned mills
+            across Karnataka and Andhra Pradesh, with traceable provenance for every plank we plane.
           </p>
           <p className="mt-4 text-muted-foreground">
-            We don't run a factory. We run a workshop — twenty-three master artisans, three apprentices,
-            and a single rule: nothing leaves the door without surviving the touch test.
+            We don't run a factory. We run a workshop — twenty-three master artisans, three
+            apprentices, and a single rule: nothing leaves the door without surviving the touch
+            test.
           </p>
         </div>
         <ul className="space-y-6">
           {timeline.map((step, i) => (
             <li key={step.t} className="flex gap-5 rounded-xl bg-card p-5 shadow-soft">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-oak-100 font-serif text-lg text-oak-900">{i + 1}</span>
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-oak-100 font-serif text-lg text-oak-900">
+                {i + 1}
+              </span>
               <div>
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">{step.y}</p>
                 <h3 className="mt-1 font-serif text-xl">{step.t}</h3>

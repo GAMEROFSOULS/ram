@@ -60,7 +60,9 @@ function CartPage() {
                             >
                               <Minus className="h-4 w-4" />
                             </button>
-                            <span className="w-4 text-center text-sm font-medium">{item.quantity}</span>
+                            <span className="w-4 text-center text-sm font-medium">
+                              {item.quantity}
+                            </span>
                             <button
                               type="button"
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}

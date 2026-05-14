@@ -20,8 +20,12 @@ export function SiteNav() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-wood text-primary-foreground font-serif text-lg shadow-soft">A</span>
-          <span className="font-serif text-xl tracking-tight text-foreground">Aditya<span className="text-oak-700">home</span></span>
+          <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-wood text-primary-foreground font-serif text-lg shadow-soft">
+            A
+          </span>
+          <span className="font-serif text-xl tracking-tight text-foreground">
+            Aditya<span className="text-oak-700">home</span>
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
