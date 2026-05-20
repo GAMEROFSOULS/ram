@@ -1,3 +1,11 @@
+declare module "react" {
+  namespace JSX {
+    interface IntrinsicElements {
+      "elevenlabs-convai": { "agent-id"?: string; [key: string]: unknown };
+    }
+  }
+}
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -113,6 +121,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <elevenlabs-convai agent-id="agent_4501krwx8sccf16v3nqfyjgad0qv"></elevenlabs-convai>
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
         <Scripts />
       </body>
     </html>
